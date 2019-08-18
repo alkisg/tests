@@ -1,25 +1,33 @@
 # Announcing LTSP 19.08
+LTSP has been redesigned and rewritten from scratch as part of a [GSoC 2019 project](https://summerofcode.withgoogle.com/projects/#4558570069164032), developed by [Alkis Georgopoulos](https://github.com/alkisg) under the mentorship of [vagrantc](https://github.com/vagrantc), [fottsia](https://github.com/fottsia) and [siahos](https://github.com/siahos), and the supervision of [GFOSS - Open Technologies Alliance](https://summerofcode.withgoogle.com/organizations/4954936912117760/). Many thanks to everyone involved for this opportunity to radically improve LTSP!
 
-LTSP has been redesigned and rewritten from scratch as part of a [GSoC 2019 project]((https://summerofcode.withgoogle.com/projects/#4558570069164032)), developed by [Alkis Georgopoulos](https://github.com/alkisg) under the mentorship of [vagrantc](https://github.com/vagrantc), [fottsia](https://github.com/fottsia) and [siahos](https://github.com/siahos), and the supervision of [GFOSS - Open Technologies Alliance](https://summerofcode.withgoogle.com/organizations/4954936912117760/). Many thanks to everyone involved for this opportunity to radically improve Epoptes!
+The new LTSP comes with a new goal: 
+> Linux Terminal Server Project helps in netbooting LAN clients from a single installation that resides in a chroot or a VM on the LTSP server. This way maintaining tens or hundreds of clients is as easy as maintaining a single PC.
 
-. The developer, [Alkis Georgopoulos](https://github.com/alkisg), wishes to thank his mentors, 
+I.e. the focus now is in ease of maintenance, not in recycling old hardware. New technologies like diskless fat clients with UEFI, Wayland etc are supported, while thin client support is now reduced to "remote desktop with xfreerdp / x2go / VNC".
 
-The new LTSP has been rewritten from scratch and shares almost no code with
-LTSP5. Compatibility was completely broken, and only some concepts remained
-the same. It's recommended that you completely purge LTSP5 (backup first if
-you want) before installing the newer LTSP.
+The old LTSP will now be called LTSP5 (it was first released in 2005), to separate it from the new versions that follow the year.month numbering. The first LTSP 19.08 release is considered an alpha version, which should work in many setups but isn't production ready nor feature complete yet.
 
-## No thin clients
+## LTSP5 equivalents
+A list of LTSP5 tools/concepts and their new equivalents follows, so that LTSP5 users can more quickly understand which parts are supposed to work, which parts aren't, and which parts are completely new.
+
+### Thin clients
 LTSP now doesn't natively support thin clients. But you can still netboot
 clients up to the login screen, and then set up a session that uses xfreerdp,
 x2go or vnc to access the server in a manner similar to thin clients. The
 community is invited to
 [write wiki pages](https://github.com/ltsp/community/wiki) about that.
 
-## LTSP5 equivalents
+### Directories/files
 The LTSP directories have changed for FHS compliancy:
  * /opt/ltsp: now in /srv/ltsp
  * /var/lib/tftpboot: now in /srv/tftp
+
+The configuration files also have changed:
+ * /var/lib/tftpboot/ltsp/i386/lts.conf: now in /etc/ltsp.conf
+ * /etc/ltsp/*.conf: now in /etc/ltsp.conf
+ * /etc/nbd-server/*: deprecated
+ * /etc/
 
 And here is a list of LTSP5 tools/concepts and their new equivalents, or the
 deprecation notices:
