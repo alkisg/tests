@@ -51,7 +51,7 @@ Here is an alphabetical list with the new equivalents of LTSP5 tools, or their d
  * getltscfg: replaced by an internal shell function
  * init-ltsp.d: [ltsp init](https://github.com/ltsp/ltsp/tree/master/ltsp/client/init)
  * jetpipe: deprecated; may be rewritten in python3 if there's need; see also [p910nd](https://manpages.debian.org/p910nd)
- * ldm: replaced by [pamltsp](https://github.com/ltsp/ltsp/blob/master/ltsp/client/login/pamltsp) and [pwmerge](https://github.com/ltsp/ltsp/blob/master/ltsp/client/login/pwmerge), which work with all display managers, like GDM, LightDM etc. The down side is that now when a new user is added, the sysadmin needs to run `ltsp initrd` and reboot the clients.
+ * ldm: replaced by [pamltsp](https://github.com/ltsp/ltsp/blob/master/ltsp/client/login/pamltsp) and [pwmerge](https://github.com/ltsp/ltsp/blob/master/ltsp/client/login/pwmerge), which work with all display managers, like GDM, LightDM etc. The down side is that currently when a new user is added, the sysadmin needs to run `ltsp initrd` and reboot the clients.
  * ldminfod: deprecated
  * lts.conf: [/etc/ltsp/ltsp.conf](https://github.com/ltsp/ltsp/blob/master/docs/ltsp.conf.5.md) uses somewhat changed syntax and manages both the clients and the server
  * ltsp-build-client: use VMs or `ltsp image /` to generate an initial chroot, then unmksqushfs it; or use debootstrap
