@@ -1,9 +1,8 @@
-# Announcing the new LTSP
+# Announcing LTSP 19.08
 
-Thanks to
+LTSP has been redesigned and rewritten from scratch as part of a [GSoC 2019 project]((https://summerofcode.withgoogle.com/projects/#4558570069164032)), developed by [Alkis Georgopoulos](https://github.com/alkisg) under the mentorship of [vagrantc](https://github.com/vagrantc), [fottsia](https://github.com/fottsia) and [siahos](https://github.com/siahos), and the supervision of [GFOSS - Open Technologies Alliance](https://summerofcode.withgoogle.com/organizations/4954936912117760/). Many thanks to everyone involved for this opportunity to radically improve Epoptes!
 
-
-## Changes from LTSP5
+. The developer, [Alkis Georgopoulos](https://github.com/alkisg), wishes to thank his mentors, 
 
 The new LTSP has been rewritten from scratch and shares almost no code with
 LTSP5. Compatibility was completely broken, and only some concepts remained
