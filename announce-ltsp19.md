@@ -16,7 +16,7 @@ A list of LTSP5 sites/concepts/tools and their new equivalents follows, so that 
 The following sites are maintained by LTSP developers. That usually means "only basic documentation/feedback, but accurate and well maintained".
 * [https://ltsp.github.io](https://ltsp.github.io): the main LTSP site; will be updated later on :)
 * [https://github.com/ltsp/ltsp/issues](https://github.com/ltsp/ltsp/issues): file bugs or feature requests that can be addressed from the LTSP code base
-* [https://github.com/ltsp/ltsp/wiki](https://github.com/ltsp/ltsp/wiki): upstream LTSP wiki; start with the [https://github.com/ltsp/ltsp/wiki/installation](installation page)
+* [https://github.com/ltsp/ltsp/wiki](https://github.com/ltsp/ltsp/wiki): upstream LTSP wiki; start with the [installation page](https://github.com/ltsp/ltsp/wiki/installation)
 * [https://github.com/ltsp/ltsp](https://github.com/ltsp/ltsp): upstream LTSP code
 
 ## LTSP community resources
