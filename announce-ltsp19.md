@@ -26,7 +26,7 @@ The following sites are maintained by the LTSP community. That could mean "more 
 * [https://webchat.freenode.net/#ltsp?nick=ltsp_user?](https://webchat.freenode.net/#ltsp?nick=ltsp_user?): IRC chat channel
 
 ## LTSP5 resources
-Resources for the old LTSP5.
+Resources for the old LTSP5; will become obsolete when users switch to the new LTSP.
 * [https://sourceforge.net/p/ltsp/mailman/](https://sourceforge.net/p/ltsp/mailman/): LTSP 5 mailing lists
 * [https://help.ubuntu.com/community/UbuntuLTSP](https://help.ubuntu.com/community/UbuntuLTSP): unmaintained LTSP 5 Ubuntu wiki
 * [https://launchpad.net/ltsp](https://launchpad.net/ltsp): LTSP 5 project page, code and translations
