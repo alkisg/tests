@@ -6,9 +6,11 @@ The new LTSP comes with a new goal:
 
 I.e. the focus now is in ease of maintenance, not in recycling old hardware. New technologies like diskless fat clients with UEFI, Wayland etc are supported, while thin client support is now reduced to "remote desktop with xfreerdp / x2go / VNC".
 
-The old LTSP will now be called LTSP5 (it was first released in 2005), to distinguish it from the new versions that follow the year.month numbering. The first LTSP 19.08 release is considered an alpha version, which should work in many setups but isn't production ready nor feature complete yet. **To try out the new version, [read the wiki](https://github.com/ltsp/ltsp/wiki/installation).**
+The old LTSP will now be called LTSP5 (it was first released in 2005), to distinguish it from the new versions that follow the year.month numbering. The first LTSP 19.08 release is considered an alpha version, which should work in many setups but isn't production ready nor feature complete yet.
 
-A list of LTSP5 sites/tools/concepts and their new equivalents follows, so that LTSP5 users can more quickly familiarize themselves with the new LTSP.
+**To try out the new version, [read the wiki](https://github.com/ltsp/ltsp/wiki/installation).** Note that in the 19.08 version, NBD swap and client-attached printers are not yet supported.
+
+A list of LTSP5 sites/concepts/tools and their new equivalents follows, so that LTSP5 users can more quickly familiarize themselves with the new LTSP.
 
 ## LTSP upstream resources
 The following sites are maintained by LTSP developers. That usually means "only basic documentation/feedback, but accurate and well maintained".
@@ -46,17 +48,18 @@ The configuration files have also changed, and a single [/etc/ltsp/ltsp.conf fil
 
 ## Equivalents
 Here is an alphabetical list with the new equivalents of LTSP5 tools, or their deprecation notices:
- * getltscfg: replaced by an internal awk function
- * init-ltsp.d: [ltsp init](https://github.com/ltsp/ltsp/blob/master/docs/ltsp-client.conf.5.md)
- * ldm: replaced with [pamltsp](https://github.com/ltsp/ltsp/blob/master/ltsp/client/login/pamltsp) and [pwmerge](https://github.com/ltsp/ltsp/blob/master/ltsp/client/login/pwmerge), which work with all display managers, like GDM, LightDM etc. The down side is that now when a new user is added, the sysadmin needs to run `ltsp initrd` and reboot the clients.
+ * getltscfg: replaced by an internal shell function
+ * init-ltsp.d: [ltsp init](https://github.com/ltsp/ltsp/tree/master/ltsp/client/init)
  * jetpipe: deprecated; may be rewritten in python3 if there's need; see also [p910nd](https://manpages.debian.org/p910nd)
- * lts.conf: [/etc/ltsp/ltsp.conf](https://github.com/ltsp/ltsp/blob/master/docs/ltsp.conf.5.md) with completely different parameters
+ * ldm: replaced by [pamltsp](https://github.com/ltsp/ltsp/blob/master/ltsp/client/login/pamltsp) and [pwmerge](https://github.com/ltsp/ltsp/blob/master/ltsp/client/login/pwmerge), which work with all display managers, like GDM, LightDM etc. The down side is that now when a new user is added, the sysadmin needs to run `ltsp initrd` and reboot the clients.
+ * ldminfod: deprecated
+ * lts.conf: [/etc/ltsp/ltsp.conf](https://github.com/ltsp/ltsp/blob/master/docs/ltsp.conf.5.md) uses somewhat changed syntax and manages both the clients and the server
  * ltsp-build-client: use VMs or `ltsp image /` to generate an initial chroot, then unmksqushfs it; or use debootstrap
  * ltsp-chroot: deprecated; may be reincluded if there's need
  * ltsp-cluster-info: deprecated
  * ltsp-config dnsmasq: [ltsp dnsmasq](https://github.com/ltsp/ltsp/blob/master/docs/ltsp-dnsmasq.8.md)
- * ltsp-config isc-dhcp-server: deprecated; may be reincluded if there's need
- * ltsp-config lts.conf: create /etc/ltsp/client.conf manually
+ * ltsp-config isc-dhcp-server: may be reincluded if there's need
+ * ltsp-config lts.conf: run `man ltsp.conf` to see how to create /etc/ltsp/ltsp.conf
  * ltsp-config nbd-server: deprecated; may be reincluded if there's need
  * ltsp-config nfs: [ltsp nfs](https://github.com/ltsp/ltsp/blob/master/docs/ltsp-nfs.8.md)
  * ltspfs: deprecated
