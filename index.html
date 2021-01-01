@@ -2,23 +2,20 @@
 <head>
 <style type="text/css">
 @media (min-aspect-ratio: 16 / 9) {
-    :root {
-        --base-unit: calc(1vh * 16 / 9);
-        --background: #f9a;
+    html, body {
+        font-size: calc(1vh * 16 / 9);
+        background-color: #f9a;
     }
 }
 @media (max-aspect-ratio: 16 / 9) {
-    :root {
-        --base-unit: 1vw;
-        --background: #9fa;
+    html, body {
+        font-size: 1vw;
+        background-color: #9fa;
     }
 }
 html, body {
     margin: 0;
-    background-color: var(--background);
     color: #000;
-    /* This allows us to use rem units everywhere */
-    font-size: var(--base-unit);
 }
 #main {
     font-size: 2.5rem;
