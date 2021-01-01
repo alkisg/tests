@@ -1,0 +1,85 @@
+<html>
+<head>
+<style type="text/css">
+@media (min-aspect-ratio: 3 / 4) {
+    html, body {
+        font-size: calc(1vh * 3 / 4);
+        background-color: #f9a;
+    }
+    #main {
+        height: 100%;
+    }
+}
+@media (min-aspect-ratio: 1/2) and (max-aspect-ratio: 3 / 4) {
+    html, body {
+        font-size: 1vw;
+        background-color: #a9f;
+    }
+    #main {
+        height: 100%;
+    }
+}
+@media (max-aspect-ratio: 1 / 2) {
+    html, body {
+        font-size: 1vw;
+        background-color: #9fa;
+    }
+    #main {
+        height: calc(100rem * 2 / 1);
+    }
+}
+html, body {
+    margin: 0;
+    color: #000;
+}
+#main {
+    font-size: 2.5rem;
+    width: 100rem;
+    background-color: #9af;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+#main p {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+#show-base-unit {
+    width: 1rem;
+    height: 1rem;
+    background-color: yellow;
+}
+</style>
+<script>
+function onFullScreen(event) {
+  var doc = window.document;
+  var docEl = doc.documentElement;
+  var requestFullScreen = docEl.requestFullscreen || docEl.mozRequestFullScreen
+    || docEl.webkitRequestFullScreen || docEl.msRequestFullscreen;
+  var cancelFullScreen = doc.exitFullscreen || doc.mozCancelFullScreen
+    || doc.webkitExitFullscreen || doc.msExitFullscreen;
+
+  if (!doc.fullscreenElement && !doc.mozFullScreenElement
+    && !doc.webkitFullscreenElement && !doc.msFullscreenElement) {
+    requestFullScreen.call(docEl);
+  } else {
+    cancelFullScreen.call(doc);
+  }
+}
+</script>
+</head>
+<body>
+<div id="main"><p>This div fits the viewport while maintaining an aspect ratio between 1/2 and 3/4.</p>
+<p>Try to resize the browser window. No javascript is used.</p>
+<div id="show-base-unit" onclick="onFullScreen()"></div>
+<p>The yellow rectangle is the base unit (=1rem). Click it for full screen.</p>
+<p>The background color indicates which @media query is in effect.</p>
+</div>
+</body>
+</html>
